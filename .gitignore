@@ -1,0 +1,6 @@
+venv
+*.json
+.idea
+__pycache__
+.vscode
+docker-compose
