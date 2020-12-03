@@ -66,7 +66,7 @@ class PartyInv(discord.ext.commands.Cog):
 
         elif args[0] == 'remove':
             if args[1] == 'item':
-                item = await API.get_item(args[1])
+                item = await API.get_item(args[2])
                 if isinstance(item, list):
                     if len(item) == 0:
                         await ctx.send(embed=self.error_embed('partyinv', self.ErrorReasons.NONEFOUND))
