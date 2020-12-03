@@ -1,4 +1,5 @@
 import discord.ext.commands
+import json
 
 bot = discord.ext.commands.Bot(
     command_prefix="^",
@@ -17,4 +18,8 @@ async def on_ready():
 
 
 if __name__ == "__main__":
-    bot.run('NzgzNDE1NTczMTQwODY1MDY2.X8aamw.9T87j8_1kREL2ckLLNpJW37VvCU')
+    with open('/etc/dndtools-discord/conf.json') as f:
+        conf = json.load(f)
+        f.close()
+    print(conf['token'])
+    bot.run(conf['token'])
